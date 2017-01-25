@@ -32,12 +32,34 @@ public class Employee {
           return firstName + " " + lastName;
       }
       
+      //set method which sets something,setting an instance variable.
       public void setBirthday(LocalDate dob)
       {
           LocalDate today = LocalDate.now();
           
           int age  = Period.between(dob, today).getYears();
+          if (age >= 15 && age <= 90) //valid Employee dob
+              this.dateOfBirth = dob;
+          else
+              throw new IllegalArgumentException("The employee must be 15 - 90 years old.");
           
       }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getSocialInsurance() {
+        return socialInsurance;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+      
 }
 
