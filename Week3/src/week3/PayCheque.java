@@ -51,5 +51,13 @@ public class PayCheque {
         return chequeNumber;
     }
     
-    
+          /**
+     * this will show who the cheque is made out to, the cheque number and the amount
+     * 
+     */
+    public String toString()
+    {
+        return String.format("Cheque #%d, issues to %s, for the amount of %.2f", getChequeNumber(),
+                getEmployeeName(), getAmount() );
+    }
 }
